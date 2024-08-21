@@ -1,6 +1,6 @@
 package com.amazon.ata.inmemorycaching.classroom.activity;
 
-import com.amazon.ata.inmemorycaching.classroom.dao.GroupMembershipDao;
+import com.amazon.ata.inmemorycaching.classroom.dao.GroupMembershipCachingDao;
 import dagger.internal.Factory;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
@@ -10,9 +10,10 @@ import javax.inject.Provider;
   comments = "https://google.github.io/dagger"
 )
 public final class CheckUserInGroupActivity_Factory implements Factory<CheckUserInGroupActivity> {
-  private final Provider<GroupMembershipDao> groupMembershipDaoProvider;
+  private final Provider<GroupMembershipCachingDao> groupMembershipDaoProvider;
 
-  public CheckUserInGroupActivity_Factory(Provider<GroupMembershipDao> groupMembershipDaoProvider) {
+  public CheckUserInGroupActivity_Factory(
+      Provider<GroupMembershipCachingDao> groupMembershipDaoProvider) {
     this.groupMembershipDaoProvider = groupMembershipDaoProvider;
   }
 
@@ -22,7 +23,7 @@ public final class CheckUserInGroupActivity_Factory implements Factory<CheckUser
   }
 
   public static CheckUserInGroupActivity_Factory create(
-      Provider<GroupMembershipDao> groupMembershipDaoProvider) {
+      Provider<GroupMembershipCachingDao> groupMembershipDaoProvider) {
     return new CheckUserInGroupActivity_Factory(groupMembershipDaoProvider);
   }
 }

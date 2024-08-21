@@ -1,10 +1,10 @@
+com/amazon/ata/inmemorycaching/classroom/integration/Phase0Test.java
+ com.amazon.ata.inmemorycaching.classroom.integration.Phase0Test
 com/amazon/ata/inmemorycaching/classroom/integration/helper/ActivityProvider.java
  com.amazon.ata.inmemorycaching.classroom.integration.helper.ActivityProvider
-com/amazon/ata/inmemorycaching/classroom/integration/Phase1Test.java
- com.amazon.ata.inmemorycaching.classroom.integration.Phase1Test
 com/amazon/ata/inmemorycaching/classroom/dao/GroupMembershipCachingDaoTest.java
  com.amazon.ata.inmemorycaching.classroom.dao.GroupMembershipCachingDaoTest
 com/amazon/ata/inmemorycaching/classroom/integration/helper/TestDataProvider.java
  com.amazon.ata.inmemorycaching.classroom.integration.helper.TestDataProvider
-com/amazon/ata/inmemorycaching/classroom/integration/Phase0Test.java
- com.amazon.ata.inmemorycaching.classroom.integration.Phase0Test
+com/amazon/ata/inmemorycaching/classroom/integration/Phase1Test.java
+ com.amazon.ata.inmemorycaching.classroom.integration.Phase1Test

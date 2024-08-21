@@ -8,6 +8,7 @@ import com.amazon.ata.inmemorycaching.classroom.activity.GetGroupsForUserActivit
 import com.amazon.ata.inmemorycaching.classroom.activity.GetUsersInGroupActivity;
 import com.amazon.ata.inmemorycaching.classroom.activity.RemoveUserFromGroupActivity;
 import com.amazon.ata.inmemorycaching.classroom.dao.GroupDao;
+import com.amazon.ata.inmemorycaching.classroom.dao.GroupMembershipCachingDao;
 import com.amazon.ata.inmemorycaching.classroom.dao.GroupMembershipDao;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.internal.DoubleCheck;
@@ -42,6 +43,10 @@ public final class DaggerServiceComponent implements ServiceComponent {
     return new GroupDao(provideDynamoDBMapperProvider.get());
   }
 
+  private GroupMembershipCachingDao getGroupMembershipCachingDao() {
+    return new GroupMembershipCachingDao(getGroupMembershipDao());
+  }
+
   @SuppressWarnings("unchecked")
   private void initialize(final Builder builder) {
     this.provideDynamoDBMapperProvider =
@@ -55,7 +60,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   @Override
   public CheckUserInGroupActivity provideCheckUserInGroupActivity() {
-    return new CheckUserInGroupActivity(getGroupMembershipDao());
+    return new CheckUserInGroupActivity(getGroupMembershipCachingDao());
   }
 
   @Override
